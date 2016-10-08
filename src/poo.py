@@ -16,9 +16,18 @@ class IngSistemas(Humano):
     def programar(self, lenguaje):
         print "Voy a programar en", lenguaje
 
+
 class LicDerecho(Humano):
+    def __init__(self, escuela):
+        print "Lic. en Derecho en Escuela", escuela
+
     def estudiar_caso(self, caso):
         print "Debo estudiar el caso:", caso
+
+
+class Estudioso(IngSistemas, LicDerecho):
+    pass
+
 
 pedro = IngSistemas()
 raul = LicDerecho(21)
@@ -28,3 +37,8 @@ raul.estudiar_caso("Caso Millonario")
 
 pedro.hablar("Hola")
 raul.hablar("Hola Pedro")
+
+pepe = Estudioso()
+pepe.hablar("Hola, soy de herencia multiple")
+pepe.programar("C++")
+pepe.estudiar_caso("Millonario")
